@@ -46,7 +46,7 @@ public class EmployeeController {
         return new ResponseEntity<EmployeeDto>(responseEmployeeDto,HttpStatus.OK);
     }
     
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void delete(Long id) {
         this.employeeService.delete(id);
     }

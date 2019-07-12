@@ -17,13 +17,13 @@ import lombok.RequiredArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class EmployeeDto {
-    private Long id;    
+    private String id;    
     private String firstName;
     private String lastName;
     private Date birthDate;
     private String department;
     
-    public EmployeeDto(Long id, String firstName,String lastName, Date birthDate,String department){
+    public EmployeeDto(String id, String firstName,String lastName, Date birthDate,String department){
         this.id=id;
         this.firstName=firstName;
         this.lastName=lastName;
