@@ -8,8 +8,8 @@ package com.ibm.cloud.coc.employeemicroservice.controller;
 import com.ibm.cloud.coc.employeemicroservice.dto.EmployeeDto;
 import com.ibm.cloud.coc.employeemicroservice.service.EmployeeService;
 import java.util.List;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,22 +24,21 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author PravinDeshmukh
  */
-@RequiredArgsConstructor
+@AllArgsConstructor
 @RequestMapping("/api/employee")
 @RestController
 public class EmployeeController {
     
-    @Autowired
     private EmployeeService employeeService;
     
     @GetMapping("/{firstName}")
-    public List<EmployeeDto> findByFirstName(@PathVariable String name){
-        return this.employeeService.findByFirstName(name);
+    public List<EmployeeDto> findByFirstName(@PathVariable String firstName){
+        return this.employeeService.findByFirstName(firstName);
     }
     
     @GetMapping
-    public List<EmployeeDto> findAll(String name) {
-        return this.employeeService.findAll(name);
+    public List<EmployeeDto> findAll() {
+        return this.employeeService.findAll();
     }
     
     @PostMapping

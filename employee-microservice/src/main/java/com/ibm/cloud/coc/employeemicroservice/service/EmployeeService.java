@@ -10,9 +10,9 @@ import com.ibm.cloud.coc.employeemicroservice.dto.EmployeeDto;
 import com.ibm.cloud.coc.employeemicroservice.repository.EmployeeRepository;
 import java.util.List;
 import java.util.stream.Collectors;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -21,22 +21,22 @@ import org.springframework.stereotype.Service;
  */
 
 @Slf4j
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Service
 public class EmployeeService {
  
-    @Autowired
+    //@Autowired
     private final EmployeeRepository employeeRepository;
  
-    public List<EmployeeDto> findByFirstName(String name){
-        return this.employeeRepository.findByFirstName(name)
+    public List<EmployeeDto> findByFirstName(String firstName){
+        return this.employeeRepository.findByFirstName(firstName)
                 .stream()
                 .map(EmployeeService::mapToDto)
                 .collect(Collectors.toList());
     }
     
-    public List<EmployeeDto> findAll(String name) {
-        return this.employeeRepository.findByFirstName(name)
+    public List<EmployeeDto> findAll() {
+        return this.employeeRepository.findAll()
                 .stream()
                 .map(EmployeeService::mapToDto)
                 .collect(Collectors.toList());
