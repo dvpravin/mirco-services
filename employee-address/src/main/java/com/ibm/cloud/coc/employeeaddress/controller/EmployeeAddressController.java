@@ -30,7 +30,7 @@ public class EmployeeAddressController {
     @Autowired
     private EmployeeAddressRepository addressRepository;
     
-    @GetMapping
+    @GetMapping("/")
     public List<EmployeeAddress> findAll(){
         return this.addressRepository.findAll();
     }
@@ -40,9 +40,9 @@ public class EmployeeAddressController {
      return this.addressRepository.findByEmpId(id);   
     }
     
-    @PostMapping
+    @PostMapping("/")
     public EmployeeAddress createAddress(@RequestBody EmployeeAddress employeeAddress){
-     return this.addressRepository.save(employeeAddress);   
+     return this.addressRepository.save(employeeAddress);  
     }
 
 }
