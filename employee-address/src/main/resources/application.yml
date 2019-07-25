@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: employee-address
+  data:
+    datasource:
+      url: jdbc:postgresql://postgresql:5432/${POSTGRESQL_DATABASE_NAME}
+      username: ${POSTGRESQL_DATABASE_USER}
+      password: ${POSTGRESQL_DATABASE_PASSWORD}
+
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
