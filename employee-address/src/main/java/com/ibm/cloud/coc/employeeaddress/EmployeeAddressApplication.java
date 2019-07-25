@@ -17,7 +17,7 @@ import springfox.documentation.swagger.web.TagsSorter;
 import springfox.documentation.swagger.web.UiConfiguration;
 
 @SpringBootApplication
-//@EnableDiscoveryClient
+@EnableSwagger2
 @EnableJpaRepositories
 public class EmployeeAddressApplication {
     
