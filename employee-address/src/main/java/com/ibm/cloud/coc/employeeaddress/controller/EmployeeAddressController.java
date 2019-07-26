@@ -40,7 +40,7 @@ public class EmployeeAddressController {
         return this.addressRepository.findAll();
     }
     
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public List<EmployeeAddress> findByEmpId(@PathVariable String id){
      return this.addressRepository.findByEmpId(id);   
     }
@@ -50,7 +50,7 @@ public class EmployeeAddressController {
      return this.addressRepository.save(employeeAddress);  
     }
     
-    @GetMapping("/country")
+    @GetMapping("/bycountry/{country}")
     public List<EmployeeAddress> findEmployeeByCountry(@PathVariable String country){
         log.info("Find Employees by : country={}", country);
         List<EmployeeAddress> addresses = addressRepository.findByCountry(country);
