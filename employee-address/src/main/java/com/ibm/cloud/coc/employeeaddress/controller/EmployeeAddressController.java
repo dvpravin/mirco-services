@@ -44,6 +44,11 @@ public class EmployeeAddressController {
     public List<EmployeeAddress> findByEmpId(@PathVariable String id){
      return this.addressRepository.findByEmpId(id);   
     }
+
+    @GetMapping("/country/{id}")
+    public List<EmployeeAddress> findAddressByCountry(@PathVariable String country){
+     return this.addressRepository.findByCountry(country);   
+    }
     
     @PostMapping("/")
     public EmployeeAddress createAddress(@RequestBody EmployeeAddress employeeAddress){
