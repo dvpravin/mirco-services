@@ -5,6 +5,7 @@
  */
 package com.ibm.cloud.coc.employeemicroservice.controller;
 
+import com.ibm.cloud.coc.employeemicroservice.domain.Employee;
 import com.ibm.cloud.coc.employeemicroservice.dto.EmployeeDto;
 import com.ibm.cloud.coc.employeemicroservice.service.EmployeeService;
 import java.util.List;
@@ -37,7 +38,7 @@ public class EmployeeController {
     }
     
     @GetMapping("/{id}")
-    public EmployeeDto findById(@PathVariable String id){
+    public Employee findById(@PathVariable String id){
         return this.employeeService.findById(id);
     }
     

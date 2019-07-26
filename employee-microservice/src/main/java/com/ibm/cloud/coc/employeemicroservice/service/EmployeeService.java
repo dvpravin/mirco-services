@@ -29,10 +29,10 @@ public class EmployeeService {
     //@Autowired
     private final EmployeeRepository employeeRepository;
  
-    public EmployeeDto findById(String empId){
+    public Employee findById(String empId){
         Optional<Employee> response = this.employeeRepository.findById(empId);
         if(response.isPresent())
-            return mapToDto(response.get());
+            return response.get();
         else
             return null;
     }
