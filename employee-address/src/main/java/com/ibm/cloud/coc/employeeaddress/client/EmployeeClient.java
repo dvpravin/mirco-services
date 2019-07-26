@@ -8,6 +8,7 @@ package com.ibm.cloud.coc.employeeaddress.client;
 import com.ibm.cloud.coc.employeeaddress.domain.Employee;
 import java.util.List;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 /**
@@ -16,5 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  */
 @FeignClient(name = "employee",url = "${microservices.employee.url}")
 public interface EmployeeClient {
+    
+    @GetMapping("/api/employee/{empId}")
     List<Employee> findByEmpId(@PathVariable("empId") String empId);
 }
