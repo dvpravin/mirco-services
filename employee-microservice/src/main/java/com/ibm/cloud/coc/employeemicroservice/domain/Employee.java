@@ -10,6 +10,7 @@ import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
 
@@ -20,6 +21,7 @@ import org.springframework.data.annotation.Id;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 public class Employee implements Serializable{
     private static final long serialVersionUID = 1L;
@@ -29,5 +31,5 @@ public class Employee implements Serializable{
     private String firstName;
     private String lastName;
     private Date birthDate;
-    private String department;
+    private String departmentId;
 }

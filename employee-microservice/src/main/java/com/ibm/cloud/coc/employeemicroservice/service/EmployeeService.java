@@ -50,7 +50,7 @@ public class EmployeeService {
                         employeeDto.getFirstName(),
                         employeeDto.getLastName(),
                         employeeDto.getBirthDate(),
-                        employeeDto.getDepartment())
+                        employeeDto.getDepartmentId())
                 ));
     }
 
@@ -65,7 +65,7 @@ public class EmployeeService {
                     employee.getFirstName(),
                     employee.getLastName(),
                     employee.getBirthDate(),
-                    employee.getDepartment());
+                    employee.getDepartmentId());
         }else
             return null;
     }
