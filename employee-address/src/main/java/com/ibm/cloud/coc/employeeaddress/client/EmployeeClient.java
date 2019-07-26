@@ -18,6 +18,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "employee",url = "${microservices.employee.url}")
 public interface EmployeeClient {
     
-    @GetMapping("/api/employee/{empId}")
-    List<Employee> findByEmpId(@PathVariable("empId") String empId);
+    @GetMapping("/api/employee/{id}")
+    List<Employee> findByEmpId(@PathVariable("id") String id);
 }
