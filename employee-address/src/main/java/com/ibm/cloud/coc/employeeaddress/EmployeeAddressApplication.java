@@ -3,6 +3,7 @@ package com.ibm.cloud.coc.employeeaddress;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -18,8 +19,9 @@ import springfox.documentation.swagger.web.UiConfiguration;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableSwagger2
 @EnableJpaRepositories
+@EnableSwagger2
+@EnableFeignClients
 public class EmployeeAddressApplication {
     
     	@Value("${VERSION}")

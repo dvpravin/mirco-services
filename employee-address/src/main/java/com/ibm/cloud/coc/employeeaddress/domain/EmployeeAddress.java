@@ -5,6 +5,8 @@
  */
 package com.ibm.cloud.coc.employeeaddress.domain;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,6 +16,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Transient;
 
 /**
  *
@@ -54,5 +57,7 @@ public class EmployeeAddress {
     @Size(max=2)
     @Column(name = "country", length = 2)
     private String country;
-       
+    
+    @Transient
+    private List<Employee> employee = new ArrayList();
 }

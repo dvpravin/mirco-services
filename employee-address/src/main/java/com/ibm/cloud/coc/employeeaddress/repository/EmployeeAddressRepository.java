@@ -18,4 +18,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EmployeeAddressRepository extends JpaRepository<EmployeeAddress, Long> {
     public List<EmployeeAddress> findByEmpId(String empId);
+    public List<EmployeeAddress> findByCountry(String country);
+    
 }

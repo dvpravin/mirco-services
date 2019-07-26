@@ -3,9 +3,13 @@ spring:
     name: employee-address
   data:
     datasource:
-      url: jdbc:postgresql://postgresql:5432/${POSTGRESQL_DATABASE_NAME}
+      url: jdbc:postgresql://postgressql:5432/${POSTGRESQL_DATABASE_NAME}
       username: ${POSTGRESQL_DATABASE_USER}
       password: ${POSTGRESQL_DATABASE_PASSWORD}
+
+microservices:
+  employee:
+    url: http://${EMPLOYEE_SERVICE}:8080
 
 logging:
   pattern: 
