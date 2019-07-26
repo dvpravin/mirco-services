@@ -36,6 +36,11 @@ public class EmployeeController {
         return this.employeeService.findByFirstName(firstName);
     }
     
+    @GetMapping("/{id}")
+    public EmployeeDto findById(@PathVariable String id){
+        return this.employeeService.findById(id);
+    }
+    
     @GetMapping
     public List<EmployeeDto> findAll() {
         return this.employeeService.findAll();
@@ -48,7 +53,7 @@ public class EmployeeController {
     }
     
     @DeleteMapping("/{id}")
-    public void delete(Long id) {
+    public void delete(String id) {
         this.employeeService.delete(id);
     }
 }

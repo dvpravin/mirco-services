@@ -9,6 +9,7 @@ import com.ibm.cloud.coc.employeemicroservice.domain.Employee;
 import com.ibm.cloud.coc.employeemicroservice.dto.EmployeeDto;
 import com.ibm.cloud.coc.employeemicroservice.repository.EmployeeRepository;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +29,14 @@ public class EmployeeService {
     //@Autowired
     private final EmployeeRepository employeeRepository;
  
+    public EmployeeDto findById(String empId){
+        Optional<Employee> response = this.employeeRepository.findById(empId);
+        if(response.isPresent())
+            return mapToDto(response.get());
+        else
+            return null;
+    }
+
     public List<EmployeeDto> findByFirstName(String firstName){
         return this.employeeRepository.findByFirstName(firstName)
                 .stream()
@@ -54,7 +63,7 @@ public class EmployeeService {
                 ));
     }
 
-    public void delete(Long id) {
+    public void delete(String id) {
         log.debug("Request to delete Employee : {}", id);
         this.employeeRepository.deleteById(id);
     }

@@ -15,6 +15,6 @@ import org.springframework.stereotype.Repository;
  * @author PravinDeshmukh
  */
 @Repository
-public interface EmployeeRepository extends MongoRepository<Employee, Long> {
+public interface EmployeeRepository extends MongoRepository<Employee, String> {
     public List<Employee> findByFirstName(String firstName);
 }
