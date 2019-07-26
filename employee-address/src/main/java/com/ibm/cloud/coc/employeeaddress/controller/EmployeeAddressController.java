@@ -45,7 +45,7 @@ public class EmployeeAddressController {
      return this.addressRepository.findByEmpId(id);   
     }
 
-    @GetMapping("/country/{id}")
+    @GetMapping("/country/{country}")
     public List<EmployeeAddress> findAddressByCountry(@PathVariable String country){
      return this.addressRepository.findByCountry(country);   
     }
