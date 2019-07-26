@@ -31,7 +31,7 @@ public class EmployeeController {
     
     private EmployeeService employeeService;
     
-    @GetMapping("/{firstName}")
+    @GetMapping("/byfname/{firstName}")
     public List<EmployeeDto> findByFirstName(@PathVariable String firstName){
         return this.employeeService.findByFirstName(firstName);
     }
