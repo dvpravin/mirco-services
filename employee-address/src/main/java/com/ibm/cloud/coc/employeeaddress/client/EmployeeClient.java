@@ -19,5 +19,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface EmployeeClient {
     
     @GetMapping("/api/employee/{id}")
-    List<Employee> findByEmpId(@PathVariable("id") String id);
+    Employee findByEmpId(@PathVariable("id") String id);
 }

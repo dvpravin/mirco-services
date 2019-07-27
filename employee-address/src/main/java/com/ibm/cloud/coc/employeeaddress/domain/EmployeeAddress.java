@@ -59,5 +59,5 @@ public class EmployeeAddress {
     private String country;
     
     @Transient
-    private List<Employee> employee = new ArrayList();
+    private Employee employee;
 }

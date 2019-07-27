@@ -59,7 +59,8 @@ public class EmployeeAddressController {
     public List<EmployeeAddress> findEmployeeByCountry(@PathVariable String country){
         log.info("Find Employees by : country={}", country);
         List<EmployeeAddress> addresses = addressRepository.findByCountry(country);
-        addresses.forEach(a -> a.setEmployee(employeeClient.findByEmpId(a.getEmpId())));        
+        addresses.forEach(a -> a.setEmployee(employeeClient.findByEmpId(a.getEmpId())));
+        
         return addresses;
     }
 }

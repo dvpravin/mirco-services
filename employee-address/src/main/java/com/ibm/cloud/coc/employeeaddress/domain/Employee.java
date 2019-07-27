@@ -24,5 +24,5 @@ public class Employee {
     private String firstName;
     private String lastName;
     private Date birthDate;
-    private String departmentId;   
+    private String departmentId;
 }
