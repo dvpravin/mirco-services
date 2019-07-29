@@ -7,6 +7,10 @@ spring:
       username: ${POSTGRESQL_DATABASE_USER}
       password: ${POSTGRESQL_DATABASE_PASSWORD}
 
+feign:
+  hystrix:
+    enabled: true
+
 microservices:
   employee:
     url: http://${EMPLOYEE_SERVICE}:8080
