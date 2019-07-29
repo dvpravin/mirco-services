@@ -21,7 +21,7 @@ public interface EmployeeClient {
     public Employee findByEmpId(@PathVariable("id") String id);    
 }
 
-
+@Component
 class HystrixClientFallback implements EmployeeClient{
         @Override
         public Employee findByEmpId(String id){
