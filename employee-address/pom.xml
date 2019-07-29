@@ -36,6 +36,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+                
+                <!-- Hystrix -->
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+                </dependency>
+                
+                <!-- Swagger -->
                 <dependency>
                     <groupId>io.springfox</groupId>
                     <artifactId>springfox-swagger2</artifactId>

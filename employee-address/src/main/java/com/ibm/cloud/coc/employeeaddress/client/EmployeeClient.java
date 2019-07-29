@@ -6,7 +6,7 @@
 package com.ibm.cloud.coc.employeeaddress.client;
 
 import com.ibm.cloud.coc.employeeaddress.domain.Employee;
-import java.util.List;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,8 +16,14 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author PravinDeshmukh
  */
 @FeignClient(name = "employee",url = "${microservices.employee.url}")
-public interface EmployeeClient {
+public abstract class EmployeeClient {
     
+    @HystrixCommand(fallbackMethod = "getDummyEmployee")
     @GetMapping("/api/employee/{id}")
-    Employee findByEmpId(@PathVariable("id") String id);
+    public abstract Employee findByEmpId(@PathVariable("id") String id);
+    
+    public Employee getDummyEmployee(){
+        return new Employee("001","Dummy", "IBM Employee", null,"GBS-CoC");                
+    }
+    
 }
