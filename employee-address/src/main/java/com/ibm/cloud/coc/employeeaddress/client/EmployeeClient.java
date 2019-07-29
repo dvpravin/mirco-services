@@ -15,15 +15,16 @@ import org.springframework.web.bind.annotation.PathVariable;
  *
  * @author PravinDeshmukh
  */
-@FeignClient(name = "employee",url = "${microservices.employee.url}")
-public abstract class EmployeeClient {
-    
-    @HystrixCommand(fallbackMethod = "getDummyEmployee")
+@FeignClient(name = "employee",url = "${microservices.employee.url}", fallback = HystrixClientFallback.class)
+public interface EmployeeClient {
     @GetMapping("/api/employee/{id}")
-    public abstract Employee findByEmpId(@PathVariable("id") String id);
-    
-    public Employee getDummyEmployee(){
+    public Employee findByEmpId(@PathVariable("id") String id);    
+}
+
+
+class HystrixClientFallback implements EmployeeClient{
+        @Override
+        public Employee findByEmpId(String id){
         return new Employee("001","Dummy", "IBM Employee", null,"GBS-CoC");                
-    }
-    
+    } 
 }
