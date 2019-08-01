@@ -6,6 +6,12 @@ spring:
       url: jdbc:postgresql://postgressql:5432/${POSTGRESQL_DATABASE_NAME}
       username: ${POSTGRESQL_DATABASE_USER}
       password: ${POSTGRESQL_DATABASE_PASSWORD}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
 
 feign:
   hystrix:
